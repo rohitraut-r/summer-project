@@ -1,0 +1,57 @@
+.header{
+    background-color: white;
+    margin-top: 10px;
+}
+.nav-item{
+    border: 1px solid grey;
+    border-radius: 20px;
+    margin-right: 20px;
+    justify-content: end;
+}
+.nav-item:hover{
+    background-color: #28a745;
+    color: white;
+}
+.nav-link:hover{
+    color: white;
+}
+.nav-link{
+    margin-top: -2px;
+    margin-bottom: -2px;
+    font-weight: bold;
+}
+
+   
+
+.navbar-nav{
+    margin-left: 400px;
+}
+.navbar-brand{
+    margin-left: 100px;
+}
+/* .donate{
+    background-color: #5cb85c;
+} */
+.container-fluid{
+    background-color: white;
+}
+.loginbtn{
+    position: absolute;
+    right: 180px;
+    border-radius: 20px;
+}
+.signup{
+    position: absolute;
+    right: 100px;
+    border-radius: 20px;
+}
+.gototop{
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    background-color:#28a745 ;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
