@@ -60,10 +60,15 @@ const FolderList = () => {
       })
       .catch((error) => {
         // Uh-oh, an error occurred!
+        
       });
       setNewFolderName('');
       console.log(folders);
   }, []);
+
+  setTimeout(() => {
+    
+  }, 2000);
 
   const handleFolderClick = (folderName) => {
     if (!breadcrumbs.includes(folderName)) {

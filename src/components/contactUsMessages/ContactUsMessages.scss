@@ -1,3 +1,19 @@
+.deleteButton{
+  background-color: white;
+  color: crimson;
+  border: 1px dotted crimson;
+  border-radius: 10px;
+}
+.deleteButton:hover{
+ color: white;
+ background-color: crimson;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition-duration: 0.5s;
+
+}
+
+
 .featured {
   flex: 2;
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);

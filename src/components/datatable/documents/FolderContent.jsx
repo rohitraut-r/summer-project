@@ -37,6 +37,7 @@ const FolderContent = ({ currentFolder, breadcrumbs, onBack, onUpload }) => {
         });
     }
     alert("Uploaded Files Successfully");
+    window.location.reload();
   };
  
 

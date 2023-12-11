@@ -21,6 +21,8 @@ const PDFFilePath = () => {
   const [selectedFilter, setSelectedFilter] = useState(''); // Default value '1' for ALL
   const [minAge, setMinAge] =  useState('');
   const [maxAge, setMaxAge] =  useState('');
+  const [data, setData] =  useState([]);
+
 
 
 
@@ -48,7 +50,7 @@ const PDFFilePath = () => {
           
           list.push({ id: doc.id, ...doc.data() });
         });
-       
+       setData(list);
         console.log(list);
       }
       else if(selectedFilter === "physical"){
@@ -60,6 +62,7 @@ const PDFFilePath = () => {
       
           list.push({ id: doc.id, ...doc.data() });
         });
+        setData(list);
        
         console.log(list);
       }
@@ -72,6 +75,7 @@ const PDFFilePath = () => {
       
           list.push({ id: doc.id, ...doc.data() });
         });
+        setData(list);
 
         console.log(list);
       }
@@ -111,7 +115,7 @@ const PDFFilePath = () => {
     </div> */}
     <div className="col-2">
       
-        {/* <PDFDownloadLink document={<PDFFilesMembers data={list} />} filename="report">
+        {/* <PDFDownloadLink document={<PDFFilesDonors data={data} />} filename="report">
           {({ loading }) =>
             loading ? (
               <button className="btn btn-primary" component>Loading Document...</button>
@@ -121,7 +125,7 @@ const PDFFilePath = () => {
           }
         </PDFDownloadLink> */}
         <PDFViewer width="800" height="600">
-        <PDFFilesDonors data={list} />
+        <PDFFilesDonors data={data} />
       </PDFViewer>
       </div>
       </div>

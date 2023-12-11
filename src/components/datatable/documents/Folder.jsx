@@ -9,13 +9,14 @@ const Folder = ({ folderName, onClick }) => {
     onClick(folderName);
   };
 
+
  
 
   return (
     <div className="col-md-3" onClick={handleFolderClick}>
-      <div className="card">
+      <div className="card" style={{marginBottom:'30px'}}>
         <div className="card-body">
-          <h5 className="card-title"> <FolderIcon/> {folderName}</h5>
+          <h5 className="card-title"> <FolderIcon/>{folderName}</h5>
         </div>
       </div>
     </div>

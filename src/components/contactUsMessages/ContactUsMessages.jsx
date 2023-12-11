@@ -7,10 +7,14 @@ import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutl
 import { doc, getDoc,collection, getDocs,limit,orderBy,query} from "firebase/firestore";
 import { db } from "../../firebase"
 import { useEffect, useState } from "react";
+import { deleteDoc } from "firebase/firestore";
 
 const Featured =() => {
   const [data, setData] = useState([]);
   const [timeData, setTimeData] = useState([]);
+
+  let id = []; 
+  const [ids, setId] = useState([]);
 
 
   const [seeAll, setSeeAll] = useState(false);
@@ -27,6 +31,8 @@ const Featured =() => {
     const serverTimestamp = doc.data().timeStamp.toDate();
    
     // console.log(doc.id, " => ", doc.data());
+    id.push(doc.id);
+    setId(id);
     const formattedDate = serverTimestamp.toLocaleDateString();
   const formattedTime = serverTimestamp.toLocaleTimeString();
   const time = formattedDate.concat(" "+formattedTime);
@@ -42,6 +48,16 @@ const Featured =() => {
 }
 fetchData();
 },[]);
+
+const handleDelete = async(id) => {
+  try{
+    await deleteDoc(doc(db, "contactUsMessage", id));
+    setData(data.filter((item) => item.id !== id));
+    window.location.reload();
+  }catch(err){
+    console.log(err)
+  }
+}
 // console.log(data);
 // console.log(timeData);
 
@@ -64,6 +80,8 @@ fetchData();
     <li className="list-group-item">Email: <a href={"mailto:"+item.email} className="">{item.email}</a></li>
     <li className="list-group-item">{"Phone: " + item.phone}</li>
     <li className="list-group-item">{"Time: " + timeData[index]}</li>
+    <li className="list-group-item"><button className="deleteButton" onClick={() => handleDelete(ids[index])}>Delete</button></li>
+
   </ul>
 ))}
     

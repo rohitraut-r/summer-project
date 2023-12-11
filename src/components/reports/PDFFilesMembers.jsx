@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
 const PDFFiles = ({data}) => {
   
-  
+  console.log(data);
 
 
 

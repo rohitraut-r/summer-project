@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page, Text,Document, StyleSheet, View} from '@react-pdf/renderer';
+import { useEffect } from 'react';
 
 
 const styles = StyleSheet.create({
@@ -28,13 +29,13 @@ const styles = StyleSheet.create({
   tableHeaderCell: {
     backgroundColor: '#f0f0f0',
     padding: 5,
-    flex: 1,
+    flex: 0.3,
     textAlign: 'center',
   },
   tableCell: {
     paddingVertical: 5,
     paddingHorizontal: 0,
-    flex: 1,
+    flex: 0.3,
     textAlign: 'center',
   },
   ageHeader:{
@@ -63,14 +64,18 @@ const styles = StyleSheet.create({
   genderHeader:{
     backgroundColor: '#f0f0f0',
     padding: 5,
-    flex: 0.5,
+    flex: 0.3,
     textAlign: 'center',
   },
   genderCell:{
     
     padding: 5,
-    flex: 0.5,
+    flex: 0.3,
     textAlign: 'center',
+  },
+  total:{
+    fontSize:15,
+    textAlign:'center'
   }
 
 
@@ -110,7 +115,14 @@ const styles = StyleSheet.create({
 
 
 const PDFFiles = ({data}) => {
+ let total = 0;
+ data.map((item) => {
+  total += parseInt(item.amount,10);
+  console.log(item.timeStamp);
+ })
   
+
+ 
   
 
 
@@ -120,17 +132,17 @@ const PDFFiles = ({data}) => {
 
   <Document>
   <Page style={styles.page}>
-    <Text style={styles.title}>Member Information</Text>
+    <Text style={styles.title}>Donor Information</Text>
     <View style={styles.table}>
       {/* Table Header */}
       <View style={styles.tableRow}>
         <Text style={styles.snHeader}>S.N</Text>
         <Text style={styles.tableHeaderCell}>Name</Text>
-        <Text style={styles.genderHeader}>Gender</Text>
-        <Text style={styles.ageHeader}>Age</Text>
-        <Text style={styles.tableHeaderCell}>Position</Text>
-        <Text style={styles.tableHeaderCell}>Address</Text>
-        <Text style={styles.tableHeaderCell}>Phone</Text>
+        <Text style={styles.genderHeader}>Address</Text>
+        <Text style={styles.ageHeader}>Type</Text>
+        <Text style={styles.tableHeaderCell}>Amount</Text>
+        <Text style={styles.ageHeader}>Date</Text>
+        <Text style={styles.tableHeaderCell}>Receipt No.</Text>
         <Text style={styles.tableHeaderCell}>Email</Text>
       </View>
 
@@ -140,15 +152,18 @@ const PDFFiles = ({data}) => {
           <Text style={styles.snCell
           }>{index + 1}</Text>
           <Text style={styles.tableCell}>{row.fullName}</Text>
-          <Text style={styles.genderCell}>{row.gender}</Text>
-          <Text style={styles.ageCell}>{row.age}</Text>
-          <Text style={styles.tableCell}>{row.position}</Text>
-          <Text style={styles.tableCell}>{row.address}</Text>
-          <Text style={styles.tableCell}>{row.phone}</Text>
+          <Text style={styles.genderCell}>{row.address}</Text>
+          <Text style={styles.ageCell}>{row.type}</Text>
+          <Text style={styles.tableCell}>{row.amount}</Text>
+          <Text style={styles.ageCell}>{row.timeStamp.toDate().toString()}</Text>
+          <Text style={styles.tableCell}>{row.oid}</Text>
           <Text style={styles.tableCell}>{row.email}</Text>
+         
+
         </View>
       ))}
     </View>
+    <Text style={styles.total}>Total Donation = {total}</Text>
   </Page>
 </Document>
 
