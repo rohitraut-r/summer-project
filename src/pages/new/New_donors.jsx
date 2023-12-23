@@ -169,7 +169,7 @@ const New = ({ inputs, title }) => {
 
               <div className="formInput" key="Name">
                 <label>Full Name</label>
-                <input id="fullName" type="text" onChange={handleInput} />
+                <input id="fullName" type="text" onChange={handleInput} required />
               </div>
               {/* <div className="formInput" key="fullName">
                 <label>Full Name</label>
@@ -177,16 +177,16 @@ const New = ({ inputs, title }) => {
               </div> */}
               <div className="formInput" key="phone">
                 <label>Phone No:</label>
-                <input id="phone" type="text" onChange={handleInput} />
+                <input id="phone" type="text" onChange={handleInput} required/>
               </div>
               <div className="formInput" key="email">
                 <label>Email</label>
-                <input id="email" type="text" onChange={handleInput} />
+                <input id="email" type="text" onChange={handleInput} required/>
               </div>
 
               <div className="formInput" key="address">
                 <label>Address</label>
-                <input id="address" type="text" onChange={handleInput} />
+                <input id="address" type="text" onChange={handleInput} required/>
               </div>
               {/* <div className="formInput" key="date">
                 <label>Date</label>
@@ -210,7 +210,7 @@ const New = ({ inputs, title }) => {
 
               <div className="formInput" key="amount">
                 <label>Donation Amount/Worth</label>
-                <input id="amount" type="text" onChange={handleInput} />
+                <input id="amount" type="text" onChange={handleInput} required/>
               </div>
 
               {/* <div className="formInput" key="dateOfJoining">

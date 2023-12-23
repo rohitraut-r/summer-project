@@ -229,55 +229,55 @@ console.log(singleData);
               
                 <div className="formInput" key="parentsStatus">
                   <label>Parents Status</label>
-                  <input id="parentsStatus" type="text" value={singleData.parentsStatus} onChange={handleInput}/>
+                  <input id="parentsStatus" type="text" value={singleData.parentsStatus} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="fullName">
                   <label>Full Name</label>
-                  <input id="fullName" type="text" value={singleData.fullName} onChange={handleInput}/>
+                  <input id="fullName" type="text" value={singleData.fullName} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="guardian">
                   <label>Guardian</label>
-                  <input id="guardian" type="text" value={singleData.guardian} onChange={handleInput}/>
+                  <input id="guardian" type="text" value={singleData.guardian} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="guardian_phone">
                   <label>Guardian's Phone No:</label>
-                  <input id="guardian_phone" type="text" value={singleData.guardian_phone} onChange={handleInput}/>
+                  <input id="guardian_phone" type="text" value={singleData.guardian_phone} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="relation">
                   <label>Relation With Guardian</label>
-                  <input id="relation" type="text" value={singleData.relation} onChange={handleInput}/>
+                  <input id="relation" type="text" value={singleData.relation} onChange={handleInput} required/>
                 </div>
                 
                 <div className="formInput" key="address">
                   <label>Address</label>
-                  <input id="address" type="text" value={singleData.address} onChange={handleInput}/>
+                  <input id="address" type="text" value={singleData.address} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="dateOfBirth">
                   <label>Date of Birth</label>
-                  <input id="dateOfBirth" type="date" value={singleData.dateOfBirth} onChange={(event) => { handleAge(event); handleInput(event); }}/>
+                  <input id="dateOfBirth" type="date" value={singleData.dateOfBirth} onChange={(event) => { handleAge(event); handleInput(event); }} required/>
                 </div>
                 <div className="formInput" key="class">
                   <label>Class</label>
-                  <input id="class" type="text" value={singleData.class} onChange={handleInput}/>
+                  <input id="class" type="text" value={singleData.class} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="anyDisabilities">
                   <label>Any Disabilities?</label>
-                  <input id="anyDisabilities" type="text" value={singleData.anyDisabilities} onChange={handleInput}/>
+                  <input id="anyDisabilities" type="text" value={singleData.anyDisabilities} onChange={handleInput} required/>
                 </div>
                
                 <div className="formInput" key="dateOfAdmission">
                   <label>Date of Admission</label>
-                  <input id="dateOfAdmission" type="date" value={singleData.dateOfBirth} onChange={handleInput}/>
+                  <input id="dateOfAdmission" type="date" value={singleData.dateOfBirth} onChange={handleInput} required/>
                 </div>
                 <div className="formInput" key="breifHistory">
                   <label>Brief History</label>
-                  <input id="dateOfAdmission" type="text" value={singleData.breifHistory} onChange={handleInput}/>
+                  <input id="dateOfAdmission" type="text" value={singleData.breifHistory} onChange={handleInput} required/>
                 </div>
               <div className="formInput" key="gender">
                     <label>Male</label>
-                <input id="gender" type="radio" name = "gender" value="Male" checked={gender === "Male"} onChange={handleInput}/>
+                <input id="gender" type="radio" name = "gender" value="Male" checked={gender === "Male"} onChange={handleInput} required/>
                 <label>Female</label>
-                <input id="gender" type="radio" name = "gender" value="Female" checked={gender==="Female"} onChange={handleInput}/>
+                <input id="gender" type="radio" name = "gender" value="Female" checked={gender==="Female"} onChange={handleInput} required/>
                     </div>
               <button disabled ={per !== null && per < 100} type="submit" >Send</button>
             </form>

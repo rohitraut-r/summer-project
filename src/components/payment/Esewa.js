@@ -14,7 +14,7 @@ const EsewaPaymentComponent = ({ amt, num }) => {
         pid: num,
         scd: "EPAYTEST",
         su: "http://localhost:3000/success",
-        fu: "http://localhost:3000/failed"
+        fu: "http://localhost:3000/donate"
     };
 
     const post = (path, params) => {
@@ -44,7 +44,7 @@ const EsewaPaymentComponent = ({ amt, num }) => {
     
     return (
         <div>
-            {/* You can add any additional components or elements here */}
+            {/* components or elements */}
         </div>
     );
 };

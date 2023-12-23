@@ -60,6 +60,8 @@ function Donate() {
     
   };
 
+
+
  
 
   const [num, setNum] = useState(0);
@@ -75,6 +77,16 @@ function Donate() {
   console.log(num);
 
   localStorage.setItem("myData", JSON.stringify(individualData));
+
+  const validateForm = () => {
+    return (
+      individualData.fullName.trim() !== '' &&
+      individualData.phone.trim() !== '' &&
+      individualData.address.trim() !== '' &&
+      individualData.email.trim() !== '' &&
+      individualData.amount.trim() !== ''
+    );
+  };
   return (
     <>
     <Header/>
@@ -92,7 +104,8 @@ function Donate() {
               <div className="mb-3">
           <label htmlfor="name" className="form-label">Name</label>
               <input
-               
+              required
+                name='name'
                 type="text"
                 className="form-control"
                 placeholder="Name"
@@ -108,7 +121,8 @@ function Donate() {
               <div className="mb-3">
           <label htmlfor="number" className="form-label">Contact Number</label>
               <input
-                
+              required
+                name='contact'
                 type="number"
                 className="form-control"
                 placeholder="Number"
@@ -124,7 +138,8 @@ function Donate() {
               <div className="mb-3">
           <label htmlfor="number" className="form-label">Address</label>
               <input
-                
+              required
+                name='address'
                 type="text"
                 className="form-control"
                 placeholder="Address"
@@ -140,8 +155,9 @@ function Donate() {
               <div className="mb-3">
           <label htmlfor="email" className="form-label">Email</label>
               <input
-              
-                type="text"
+              required
+                name='email'
+                type="email"
                 className="form-control"
                 placeholder="Email"
                 value={individualData.email}
@@ -174,6 +190,7 @@ function Donate() {
 
           <label htmlfor="amount" className="form-label">Donation Amount</label>
               <input
+              required
                 type="number"
                 className="form-control"
                 placeholder="Amount"
@@ -195,7 +212,7 @@ function Donate() {
 
 
             <div className="mt-3">
-              <button className="btn btn-success" onClick={toggleEsewaPayment}>Pay with eSewa</button>
+              <button className="btn btn-success" onClick={toggleEsewaPayment} disabled={!validateForm()}>Pay with eSewa</button>
               {showEsewaPayment && (
     <>
       <EsewaPaymentComponent amt={individualData.amount} num={num} />

@@ -37,6 +37,10 @@ import PDFFilePathDonors from "./components/reports/PDFFilePathDonors";
 import Success from "./components/payment/Success";
 import Failed from "./components/payment/Failed";
 
+import List_users from "./pages/list/List_users";
+import New_admin from "./pages/new/New_admin";
+import Update_admin from "./pages/update/update_admin"
+
 
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -46,6 +50,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import AppointmentForm from "./components/frontend/AppointmentForm";
+import AppointmentConfirmation from "./components/frontend/AppointmentConfirmation"
 
 import DonateState from "./context/donateContext/DonateState";
 // import Datatable_members from "./components/datatable/Datatable_members";
@@ -80,6 +85,8 @@ function App() {
              <Route exact path="contactus" element={<Contactus/>}></Route>
              <Route exact path="donate" element={<Donate/>}></Route>
              <Route exact path="appointment" element={<AppointmentForm/>}></Route>
+             <Route exact path="appointmentConfirmation" element={<AppointmentConfirmation/>}></Route>
+
            
              <Route exact path="success" element={
               <DonateState>
@@ -209,6 +216,24 @@ function App() {
               <Route index element={
                 <RequireAuth>
                 <List_documents/>
+                </RequireAuth>
+              } />
+          
+            </Route>
+            <Route path="admin">
+              <Route index element={
+                <RequireAuth>
+                <List_users/>
+                </RequireAuth>
+              } />
+              <Route path="new_admin" element={
+                <RequireAuth>
+                <New_admin/>
+                </RequireAuth>
+              } />
+              <Route path="update_admin" element={
+                <RequireAuth>
+                <Update_admin/>
                 </RequireAuth>
               } />
           

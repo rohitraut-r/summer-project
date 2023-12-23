@@ -59,9 +59,9 @@ function Footer() {
   <li className="nav-item">
     <Link className="nav-link" to="/aboutus" style={{textDecoration:'none'}}>About Us</Link>
   </li>
-  <li className="nav-item">
+  {/* <li className="nav-item">
     <a className="nav-link " href="/">Services</a>
-  </li>
+  </li> */}
   <li className="nav-item">
     <a className="nav-link " href="/contactus">Contact us</a>
   </li>

@@ -227,7 +227,7 @@ console.log(singleData);
 
               <div className="formInput" key="Name">
                 <label>Full Name</label>
-                <input id="fullName" type="text" onChange={handleInput} value={singleData.fullName}/>
+                <input id="fullName" type="text" onChange={handleInput} value={singleData.fullName} required/>
               </div>
               {/* <div className="formInput" key="fullName">
                 <label>Full Name</label>
@@ -235,16 +235,16 @@ console.log(singleData);
               </div> */}
               <div className="formInput" key="phone">
                 <label>Phone No:</label>
-                <input id="phone" type="text" onChange={handleInput} value={singleData.phone}/>
+                <input id="phone" type="text" onChange={handleInput} value={singleData.phone} required/>
               </div>
               <div className="formInput" key="email">
                 <label>Email</label>
-                <input id="email" type="text" onChange={handleInput} value={singleData.email}/>
+                <input id="email" type="text" onChange={handleInput} value={singleData.email} required/>
               </div>
 
               <div className="formInput" key="address">
                 <label>Address</label>
-                <input id="address" type="text" onChange={handleInput} value={singleData.address}/>
+                <input id="address" type="text" onChange={handleInput} value={singleData.address} required/>
               </div>
               <div className="formInput" key="date">
                 <label>Date</label>
@@ -259,7 +259,7 @@ console.log(singleData);
               </div>
               <div className="formInput" key="donation_type">
                 <label>Donation Type</label>
-                <select id="donation_type">
+                <select id="donation_type"  required>
                   <option id="donation_type" onclick={handleInput}>Cash</option>
                   <option id="donation_type" onclick={handleInput}>Groceries</option>
                   <option id="donation_type" onclick={handleInput}>Stationery</option>
@@ -269,7 +269,7 @@ console.log(singleData);
 
               <div className="formInput" key="donation_amount">
                 <label>Donation Amount/Worth</label>
-                <input id="donation_amount" type="text" onChange={handleInput} value={singleData.donation_amount}/>
+                <input id="donation_amount" type="text" onChange={handleInput} value={singleData.donation_amount} required/>
               </div>
 
               {/* <div className="formInput" key="dateOfJoining">

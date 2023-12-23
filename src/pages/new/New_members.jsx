@@ -169,24 +169,24 @@ const New = ({ inputs, title }) => {
 
               <div className="formInput" key="position">
                 <label>Position</label>
-                <input id="position" type="text" onChange={handleInput} />
+                <input id="position" type="text" onChange={handleInput} required/>
               </div>
               <div className="formInput" key="fullName">
                 <label>Full Name</label>
-                <input id="fullName" type="text" onChange={handleInput} />
+                <input id="fullName" type="text" onChange={handleInput} required/>
               </div>
               <div className="formInput" key="phone">
                 <label>Phone No:</label>
-                <input id="phone" type="text" onChange={handleInput} />
+                <input id="phone" type="text" onChange={handleInput} required/>
               </div>
               <div className="formInput" key="email">
                 <label>email</label>
-                <input id="email" type="text" onChange={handleInput} />
+                <input id="email" type="text" onChange={handleInput} required/>
               </div>
 
               <div className="formInput" key="address">
                 <label>Address</label>
-                <input id="address" type="text" onChange={handleInput} />
+                <input id="address" type="text" onChange={handleInput} required/>
               </div>
               <div className="formInput" key="dateOfBirth">
                 <label>Date of Birth</label>
@@ -202,7 +202,7 @@ const New = ({ inputs, title }) => {
 
               <div className="formInput" key="dateOfJoining">
                 <label>Date of Joining</label>
-                <input id="dateOfJoining" type="date" onChange={handleInput} />
+                <input id="dateOfJoining" type="date" onChange={handleInput} required/>
               </div>
               <div className="formInput" key="gender">
                 <label>Male</label>

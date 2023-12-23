@@ -156,8 +156,8 @@ fetchData()
         className="datagrid"
         rows={data}
         columns={userColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
+        pageSize={15}
+        rowsPerPageOptions={[15]}
         checkboxSelection
       />
     </div>

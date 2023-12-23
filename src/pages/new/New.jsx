@@ -176,7 +176,7 @@ const New = ({ inputs, title }) => {
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>
                   <input
-                    // required
+                    required
                     id={input.id}
                     type={input.type}
                     placeholder={input.placeholder}
@@ -199,6 +199,7 @@ const New = ({ inputs, title }) => {
                   name="gender"
                   value="Male"
                   onChange={handleInput}
+                  required
                 />
                 <label>Female</label>
                 <input
@@ -207,6 +208,7 @@ const New = ({ inputs, title }) => {
                   name="gender"
                   value="Female"
                   onChange={handleInput}
+                  required
                 />
               </div>
 

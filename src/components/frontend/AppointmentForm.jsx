@@ -13,9 +13,15 @@ import {
   getDocs
 } from "firebase/firestore";
 import { db, storage } from "../../firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Confirmation from "./../reports/Confirmation"
+
 
 
 const AppointmentForm = () => {
+  const navigate = useNavigate();
+
   // Define state variables for form fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,6 +31,9 @@ const AppointmentForm = () => {
   const [bookingTime, setBookingTime] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [duration, setDuration] = useState("1");
+  const [data, setData] = useState({});
+  let newData = {};
+  let appointmentData = {};
 
   const [isLoading, setIsLoading] = useState(false);
   const [isAvailable, setIsAvailable] = useState(true);
@@ -76,13 +85,22 @@ const AppointmentForm = () => {
     const maxDate = new Date();
     maxDate.setMonth(maxDate.getMonth() + 1);
 
-    const appointmentData = {
+    appointmentData = {
       name,
       email,
       phone,
       purpose,
       bookingDate,
       bookingTime,
+      duration: parseInt(duration, 10),
+    };
+    newData = {
+      'name':name,
+      'email':email,
+      'phone':phone,
+      'purpose':purpose,
+      'bookingDate':bookingDate,
+      'bookingTime':bookingTime,
       duration: parseInt(duration, 10),
     };
      const bookingDateTime = new Date(`${bookingDate}T${bookingTime}`);
@@ -116,13 +134,18 @@ const AppointmentForm = () => {
       alert("Booking date must be between today and one month from today.");
       return;
     }
-
+    console.log(appointmentData);
+    setData(appointmentData);
     try {
       // Create a new document with Firestore's auto-generated ID
       await addDoc(collection(db, "appointments"), {
         ...appointmentData,
         timeStamp: serverTimestamp(),
+
       });
+      
+      console.log(data)
+
 
       setSuccessMessage("Appointment booked successfully!");
       // Reset form fields after submission (you can do it here)
@@ -133,12 +156,17 @@ const AppointmentForm = () => {
       setBookingDate("");
       setBookingTime("");
       setDuration("1");
+
+      navigate('/appointmentConfirmation', { state: { data: appointmentData } });
+    
+
+      
     } catch (error) {
       console.error("Error uploading appointment data:", error);
       alert("Appointment booking failed. Please try again later.");
     }
   };
-
+  console.log(appointmentData);
   return (
     <>
       <Header />
@@ -244,9 +272,19 @@ const AppointmentForm = () => {
               <option value="5">5</option>
             </select>
           </div>
+          {/* <PDFDownloadLink  document={<Confirmation data={data} />} filename="report">
           <button type="submit" className="btn btn-primary mb-5">
             Book Appointment
           </button>
+          </PDFDownloadLink> */}
+          <button type="submit" className="btn btn-primary mb-5">
+ 
+          
+            Book Appointment
+          
+        
+          </button>
+          
         </form>
       </div>
       <Footer />

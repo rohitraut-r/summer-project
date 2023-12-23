@@ -105,16 +105,16 @@ const PDFFilePath = () => {
         <option value="female">Female</option>
       </select>
     </div>
-    <div className="col-1">
+    {/* <div className="col-1">
       <input type="number" value={minAge} placeholder="Min Age" style={{width:'90px'}} onChange={handleMinAgeChange}></input>
-      {/* <input type="number" value={maxAge} placeholder="Max Age" style={{width:'90px'}}></input> */}
+      <input type="number" value={maxAge} placeholder="Max Age" style={{width:'90px'}}></input>
     </div>
     <div className="col-1">
     <input type="number" value={maxAge} placeholder="Max Age" style={{width:'90px'}} onChange={handleMaxAgeChange}></input>
-    </div>
+    </div> */}
     <div className="col-2">
       
-        {/* <PDFDownloadLink document={<PDFFiles data={data} />} filename="report">
+        <PDFDownloadLink document={<PDFFiles data={data} />} filename="report">
           {({ loading }) =>
             loading ? (
               <button className="btn btn-primary" component>Loading Document...</button>
@@ -122,10 +122,10 @@ const PDFFilePath = () => {
               <button className="btn btn-primary" component>Download</button>
             )
           }
-        </PDFDownloadLink> */}
-        <PDFViewer width="800" height="600">
+        </PDFDownloadLink>
+        {/* <PDFViewer width="800" height="600">
         <PDFFiles data={data} />
-      </PDFViewer>
+      </PDFViewer> */}
       </div>
       </div>
       </div>

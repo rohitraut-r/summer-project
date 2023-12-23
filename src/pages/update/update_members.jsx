@@ -228,39 +228,39 @@ console.log(singleData);
               
               <div className="formInput" key="position">
                 <label>Position</label>
-                <input id="position" type="text" value={singleData.position} onChange={handleInput}/>
+                <input id="position" type="text" value={singleData.position} onChange={handleInput} required/>
               </div>
               <div className="formInput" key="fullName">
                 <label>Full Name</label>
-                <input id="fullName" type="text" value={singleData.fullName} onChange={handleInput}/>
+                <input id="fullName" type="text" value={singleData.fullName} onChange={handleInput} required/>
               </div>
               <div className="formInput" key="phone">
                 <label>Phone No:</label>
-                <input id="phone" type="text" value={singleData.phone} onChange={handleInput}/>
+                <input id="phone" type="text" value={singleData.phone} onChange={handleInput} required/>
               </div>
               <div className="formInput" key="email">
                 <label>email</label>
-                <input id="email" type="text" value={singleData.email} onChange={handleInput}/>
+                <input id="email" type="text" value={singleData.email} onChange={handleInput} required/>
               </div>
               
               <div className="formInput" key="address">
                 <label>Address</label>
-                <input id="address" type="text" value={singleData.address} onChange={handleInput}/>
+                <input id="address" type="text" value={singleData.address} onChange={handleInput} required/>
               </div>
               <div className="formInput" key="dateOfBirth">
                 <label>Date of Birth</label>
-                <input id="dateOfBirth" type="date" value={singleData.dateOfBirth} onChange={(event) => { handleAge(event); handleInput(event); }}/>
+                <input id="dateOfBirth" type="date" value={singleData.dateOfBirth} onChange={(event) => { handleAge(event); handleInput(event); }} required/>
               </div>
              
               <div className="formInput" key="dateOfJoining">
                 <label>Date of Joining</label>
-                <input id="dateOfJoining" type="date" value={singleData.dateOfJoining} onChange={handleInput}/>
+                <input id="dateOfJoining" type="date" value={singleData.dateOfJoining} onChange={handleInput} required/>
               </div>
             <div className="formInput" key="gender">
                   <label>Male</label>
-              <input id="gender" type="radio" name = "gender" checked={singleData.gender === "male" ? "checked" : "unchecked"} value="Male" onChange={handleInput}/>
+              <input id="gender" type="radio" name = "gender" checked={singleData.gender === "male" ? "checked" : "unchecked"} value="Male" onChange={handleInput} required/>
               <label>Female</label>
-              <input id="gender" type="radio" name = "gender" value="Female" onChange={handleInput}/>
+              <input id="gender" type="radio" name = "gender" value="Female" onChange={handleInput} required/>
                   </div>
               <button disabled ={per !== null && per < 100} type="submit" >Send</button>
             </form>

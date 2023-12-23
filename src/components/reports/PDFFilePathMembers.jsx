@@ -120,7 +120,7 @@ const PDFFilePath = () => {
     </div> */}
     <div className="col-2">
       
-        {/* <PDFDownloadLink document={<PDFFilesMembers data={list} />} filename="report">
+        <PDFDownloadLink document={<PDFFilesMembers data={list} />} filename="report">
           {({ loading }) =>
             loading ? (
               <button className="btn btn-primary" component>Loading Document...</button>
@@ -128,11 +128,11 @@ const PDFFilePath = () => {
               <button className="btn btn-primary" component>Download</button>
             )
           }
-        </PDFDownloadLink> */}
+        </PDFDownloadLink>
         {console.log(list)}
-        <PDFViewer width="800" height="600">
+        {/* <PDFViewer width="800" height="600">
         <PDFFilesMembers data={data} />
-      </PDFViewer>
+      </PDFViewer> */}
       </div>
       </div>
       </div>
