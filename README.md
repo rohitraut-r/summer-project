@@ -1,4 +1,4 @@
-# Orphanage Information Management System (React)
+# Orphanage Information Management System
 
 ## Overview
 
@@ -41,6 +41,7 @@ The Orphanage Information Management System is a web application developed using
 4. **Access the Application:**
    Open your web browser and visit [http://localhost:3000](http://localhost:3000).
 
-
-
+5. **Sample Credentials:**
+   - **Username:** Rohitraut4033@gmail.com
+   - **Password:** Rohit@123
 
