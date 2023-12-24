@@ -9,13 +9,6 @@ import Footer from "../../components/frontend/Footer"
 import { sendPasswordResetEmail } from "firebase/auth"
 
 
-
-
-
-// ... (your existing imports)
-
-// ... (your existing imports)
-
 const Login = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState("");
